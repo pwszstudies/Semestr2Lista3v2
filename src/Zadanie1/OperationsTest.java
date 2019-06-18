@@ -32,4 +32,19 @@ public class OperationsTest {
         assertThat(conversion.calculate("789mi")).isEqualTo("1269,77km");
         assertThat(conversion.calculate("123mi")).isEqualTo("197,95km");
     }
+
+    @Test
+    public void kilogramsToPounds() throws Exception {
+        assertThat(conversion.calculate("22kg")).isEqualTo("48,50lb");
+        assertThat(conversion.calculate("58kg")).isEqualTo("127,87lb");
+        assertThat(conversion.calculate("789kg")).isEqualTo("1739,45lb");
+        assertThat(conversion.calculate("123kg")).isEqualTo("271,17lb");
+    }
+    @Test
+    public void poundsToKilograms() throws Exception {
+        assertThat(conversion.calculate("22lb")).isEqualTo("9,98kg");
+        assertThat(conversion.calculate("58lb")).isEqualTo("26,31kg");
+        assertThat(conversion.calculate("789lb")).isEqualTo("357,88kg");
+        assertThat(conversion.calculate("123lb")).isEqualTo("55,79kg");
+    }
 }

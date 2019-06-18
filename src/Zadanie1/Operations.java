@@ -22,11 +22,11 @@ public class Operations {
             return String.format("%.2fkm", result);
         }
         else if (inputString.contains("kg")) {
-            result = value * 0.45359f;
+            result = value * 2.20462262f;
             return String.format("%.2flb", result);
         }
         else if (inputString.contains("lb")) {
-            result = value / 0.45359f;
+            result = value * 0.45359f;
             return String.format("%.2fkg", result);
         }
         return "Incorrect data";
