@@ -1,6 +1,8 @@
 package Zadanie3;
 
 
+import Zadanie3.tests.MiscOperations;
+
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -14,20 +16,21 @@ public class vending {
                 put("Chocolate Bar", 4.50f);
             }
         };
-        InputMoney inputMoney = new InputMoney();
-        TradeSession firstSession = new TradeSession();
-        inputMoney.inputCoin(firstSession, "50zl");
-        inputMoney.inputCoin(firstSession, "5zl");
-        inputMoney.inputCoin(firstSession, "5zl");
-        inputMoney.inputCoin(firstSession, "5zl");
-        inputMoney.inputCoin(firstSession, "50gr");
-        inputMoney.inputCoin(firstSession, "50gr");
-        inputMoney.inputCoin(firstSession, "50gr");
 
-        System.out.println(firstSession.sumCoins());
-        firstSession.buyItem(products.get("Coke"));
+//        InputMoney inputMoney = new InputMoney();
+//        TradeSession firstSession = new TradeSession();
+//        inputMoney.inputCoin(firstSession, "50zl");
+//        inputMoney.inputCoin(firstSession, "5zl");
+//        inputMoney.inputCoin(firstSession, "5zl");
+//        inputMoney.inputCoin(firstSession, "5zl");
+//        inputMoney.inputCoin(firstSession, "50gr");
+//        inputMoney.inputCoin(firstSession, "50gr");
+//        inputMoney.inputCoin(firstSession, "50gr");
+//        MiscOperations miscOperations = new MiscOperations();
+//        System.out.println(miscOperations.sumCoins(firstSession));
+//        miscOperations.buyItem(firstSession, products.get("Coke"));
 
-        //firstSession.cancelSession();
+        //miscOperations.cancelSession();
         //System.out.println(firstSession.sumCoins());
 
 

@@ -7,7 +7,30 @@ public class TradeSession {
     private TreeMap<String, Integer> coinsInside;
 
     public TradeSession() {
-        coinsInside = new TreeMap<>();
+        coinsInside = new TreeMap<String, Integer>(){
+            {
+                put("5zl", 0);
+                put("2zl", 0);
+                put("1zl", 0);
+                put("50gr", 0);
+                put("20gr", 0);
+                put("10gr", 0);
+            }
+        };
+    }
+
+    public TreeMap<String, Integer> getCoinsInside() {
+        return coinsInside;
+    }
+
+    public float sumCoins() {
+
+        return ((coinsInside.get("5zl") * 5f) +
+                (coinsInside.get("2zl") * 2f) +
+                (coinsInside.get("1zl") * 1f) +
+                (coinsInside.get("50gr") * 0.50f) +
+                (coinsInside.get("20gr") * 0.20f) +
+                (coinsInside.get("10gr") * 0.10f));
     }
 
     public void addCoin(String coinValue) {
@@ -24,34 +47,8 @@ public class TradeSession {
             e.printStackTrace();
         }
     }
-    public float sumCoins() {
-        float sum = 0f;
-        if (coinsInside.containsKey("5zl")) sum = sum + coinsInside.get("5zl") *5f ;
-        if (coinsInside.containsKey("2z;")) sum = sum + coinsInside.get("2z;") *2f ;
-        if (coinsInside.containsKey("1zl")) sum = sum + coinsInside.get("1zl") *1f;
-        if (coinsInside.containsKey("50gr")) sum = sum + coinsInside.get("50gr") * 0.50f ;
-        if (coinsInside.containsKey("20gr")) sum = sum + coinsInside.get("20gr") * 0.20f;
-        if (coinsInside.containsKey("10gr")) sum = sum + coinsInside.get("10gr") * 0.10f;
-        return sum;
-    }
 
-    public void cancelSession() {
-        System.out.println("Returning coins: " + coinsInside.toString());
-        coinsInside.clear();
-    }
 
-    public float buyItem (float price) {
-        if (sumCoins() > price) {
-            System.out.println("You paid " + price + "zl");
-            System.out.println("Here is your spare change: " + (sumCoins()-price) + "zl");
-            float spare = sumCoins()-price;
-            coinsInside.clear();
-            return spare;
-        }
-        else {
-            System.out.println("You lack " + (price - sumCoins()) + "zl");
-            return -1;
-        }
-    }
+
 
 }

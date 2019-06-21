@@ -7,6 +7,7 @@ public class InputMoney {
     public void inputCoin(TradeSession tradeSession, String coin) {
         if (validateInput(coin)) {
             tradeSession.addCoin(coin);
+            System.out.println("Inserted " + coin );
         }
         else {
             System.out.println("Inserted coin is not accepted in this vending machine(" + coin +").");
